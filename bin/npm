@@ -1,0 +1,10 @@
+#!/bin/bash -eu
+
+readonly NODE_VERSION=20.11.1
+
+docker run --rm \
+  -it \
+  -v $(pwd):/app \
+  -w /app \
+  -p 3000:3000 \
+  node:${NODE_VERSION} npm "$@"
